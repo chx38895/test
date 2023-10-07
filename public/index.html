@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Simple Page</title>
+</head>
+<body>
+    <button id="myButton">Click me</button>
+    <div id="messageDiv"></div>
+
+    <script>
+        // Get references to the button and message div
+        const button = document.getElementById("myButton");
+        const messageDiv = document.getElementById("messageDiv");
+
+        // Add a click event listener to the button
+        button.addEventListener("click", () => {
+            // Set the message when the button is clicked
+            messageDiv.textContent = "Button was clicked!";
+        });
+    </script>
+</body>
+</html>
