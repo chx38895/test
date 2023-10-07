@@ -1,16 +1,21 @@
 const express = require("express");
 const path = require("path");
-
+const pool = require("./controllers/dbContext")
 const app = express();
 const port = 3000; 
 
-// Serve static files (e.g., HTML, CSS, and JavaScript)
+
 app.use(express.static(path.join(__dirname, "public")));
 
 
 app.get("/test-db-connection", async (req, res) => {
     try {
 
+        const connection = await pool.getConnection();
+
+        connection.release();
+
+        res.json({ success: true });
     } catch (error) {
         res.status(500).json({ success: false, error: error.message });
     }
