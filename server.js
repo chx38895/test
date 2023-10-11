@@ -2,7 +2,7 @@ const express = require("express");
 const path = require("path");
 const pool = require("./controllers/dbContext")
 const app = express();
-const port = 8080; 
+const port = 3000;
 
 
 app.use(express.static(path.join(__dirname, "public")));
